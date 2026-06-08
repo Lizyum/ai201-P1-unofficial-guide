@@ -10,6 +10,9 @@
 ## Domain
 
 <!-- What domain did you choose? Why is this knowledge valuable and hard to find through official channels? -->
+Domain: FGLI Student Experiences and Resources at Northwestern University 
+
+Relevance: FGLI students face challenges that extend beyond academics, including financial barriers, limited access to professional networks, feelings of imposter syndrome, and difficulty navigating university resources. While Northwestern offers some official channels for support, information about these resources is distributed across multiple platforms and often lacks the lived experiences that help students understand how to use them effectively. This RAG system aims to aggregate official Northwestern resources alongside alumni and current student experiences to provide personalized, context-rich answers. By combining institutional knowledge with peer insights, the system can help FGLI students quickly identify proven strategies, discover relevant opportunities, and navigate Northwestern with greater confidence and belonging.
 
 ---
 
@@ -18,18 +21,18 @@
 <!-- List your specific sources: URLs, subreddit names, forum threads, or file descriptions.
      Aim for at least 10 sources that together cover different subtopics or perspectives within your domain. -->
 
-| # | Source | Description | URL or location |
-|---|--------|-------------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| # | Source | Type | URL or file path |
+|---|--------|------|-----------------|
+| 1 | Reddit |Thread| [Link to Post](https://www.reddit.com/r/evanston/comments/1min35y/where_to_go_to_get_the_northwestern_experience/)|
+| 2 | The Daily Northwestern | News Source | [Link to Page](https://dailynorthwestern.com/2022/11/16/audio/digital-diaries-episode-7-life-as-a-first-generation-and-or-low-income-student/) |
+| 3 | Office of Undergraduate Admission| Blog Post | [Link to Post](https://admissionblog.northwestern.edu/2022/11/08/advice-for-fgli-students-northwestern/)|
+| 4 | Office of Undergraduate Admission| Blog Post|[Link to Post](https://admissionblog.northwestern.edu/2019/10/22/carter-finding-home-at-northwestern-as-a-first-gen-low-income-student/) |
+| 5 | Northwestern Website | Web Page | [Link to Page](https://www.northwestern.edu/studentaffairs/sass/)|
+| 6 | Reddit | Thread | [Link to Post](https://www.reddit.com/r/Northwestern/comments/1th3sjt/isolating_firstgen_experience/) |
+| 7 | Northwestern Searle Center | Web Page | [Link to Page](https://searle.northwestern.edu/resources/learning-teaching-guides/first-generation-college-student-page.html)|
+| 8 | North By Northwestern | Newsletter | [Link to Page](https://northbynorthwestern.com/discountedu-ep-6-intersectionality-latine-fgli/)|
+| 9 | Youtube | FGLI Alumni Panel Transcript | [Link to Page](https://www.youtube.com/watch?v=rhX9eEovYug)|
+| 10 | Youtube | FGLI Narratives | [Link to Page](https://www.youtube.com/watch?v=jWWHa5XdvDQ)|
 
 ---
 
@@ -73,12 +76,13 @@
 
 | # | Question | Expected answer |
 |---|----------|-----------------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
+| 1 | What are some common experiences as a FGLI at Northwestern University?| Some students reflect on challenges during the first year of college as they acclimate to their new environment. Some students struggle to find their community or may feel like they are not meant for the heavy courseload at the school.|
+| 2 | Where can I find my community at Northwestern as a FGLI student?| Affinity-based clubs are a great place to start to connect with people with similar interests and backgrounds. Specific clubs: Society of Hispanic Professional Engineers, QuestBridge, etc.|
+| 3 | How can I tackle my imposter syndrome at Northwestern University?| You are not the only one that experiences imposter syndrome during their schooling at Northwestern University. Previous student experiences consist of acknowledging the culture and environment shock that you may experience when you start at Northwestern. Tips for tackling that feeling: reaching out for support (through official channels or through the community you find at Northwestern). Some official sources of support include: Student Enrichment Services, Financial Aid Office, etc. |
+| 4 | What resources exist specifically for FGLI students at Northwestern University?| Cited sources of recommended official resources and student recommended resources as shared from panels and blogs.|
+| 5 | How can I learn more about the FGLI experience at Northwestern University?| Actionable suggestions, like: reach out to the SES office, attend club fairs to find the right club for you, connect with your advisor to point you in the direction of other resources|
 
+* All responses should cite sources
 ---
 
 ## Anticipated Challenges
