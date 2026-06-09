@@ -45,9 +45,29 @@ Relevance: FGLI students face challenges that extend beyond academics, including
 
 **Chunk size:**
 
+***Longform Panel Transcripts:***
+* Chunk Size: 500 tokens
+* Overlap: 150 tokens
+* Reasoning: Panels that dive into the FGLI experience at NU are made up of several paragraphs. In order to improve coverage on a chunk's relevance to a user's query, large chunk and overlap size is necessary.
+
+***Official Northwestern Resource Websites:***
+* Chunk Size: 300 tokens
+* Overlap: 50 tokens
+* Reasoning: Resource pages don't need much context coverage as they are usually made up factual and concise sections (i.e., deadlines, office names, application steps, etc.).
+
+***Reddit Threads:***
+* Chunk Size: ~100 - 200 tokens
+* Overlap: None
+* Reasoning: Usually reddit threads are naturally short, the range is provided to account for longer threads in hopes that the additional context can help the agent present a full experience / anectdote that can better answer a user's query.
+
+
 **Overlap:**
 
+Provided above
+
 **Reasoning:**
+
+Provided above
 
 ---
 
@@ -61,9 +81,17 @@ Relevance: FGLI students face challenges that extend beyond academics, including
 
 **Embedding model:**
 
-**Top-k:**
+all-MiniLM-L6-v2 via sentence-transformers
+
+**Top-k:** 
+
+10
 
 **Production tradeoff reflection:**
+
+Due to cost constraints, we are limited in our selection of embedding models that we can use for this system. The chosen model (all-MiniLM-L6-v2 via sentence-transformers) will truncate input text longer than 256 word pieces which will make retrieval of relevant long-form content less effective. So, we must reduce our original chunk sizes to remain within the model's input limit. This also requires a smaller overlap window, which may reduce the amount of contextual information shared between adjacent chunks and increase the risk of losing semantic continuity across chunk boundaries. This tradeoff ensures that all content is represented in the embedding space. We can mitigate the loss of context from smaller chunk sizes by storing metadata for each chunk, allowing the retrieval system to narrow the search space and retrieve semantically relevant content more effectively.
+
+If we were to scale this system, the best embedding model for our system should excel at cross-domain semantic matching (an embedding model that can represent casual conversations and official resources effectively). A model such as Voyage AI's voyage-4-large would be better suited because it supports long-context inputs and excels at semantic matching across diverse document types.
 
 ---
 
@@ -91,9 +119,9 @@ Relevance: FGLI students face challenges that extend beyond academics, including
      Consider: noisy or inconsistent documents, missing source attribution, off-topic
      retrieval, chunks that split key information across boundaries. -->
 
-1.
+1. I am concerned about how the embedding model handles long-form content given its limited input size. Many student experiences are shared through multi-paragraph narratives, and chunking these stories into smaller sections may fragment important context. This could result in retrieved chunks that appear disconnected from the larger narrative, reducing semantic coherence and retrieval quality.
 
-2.
+2. Another anticipated challenge is ensuring the system retrieves the most appropriate source for a user's question. Since our knowledge base includes both official Northwestern resources and personal student experiences, the system may return information that is relevant but not necessarily what the user is looking for. For example, it may provide a personal anecdote when a student needs official information, or an official resource when a student is seeking advice from peers who have faced similar challenges.
 
 ---
 
@@ -104,6 +132,8 @@ Relevance: FGLI students face challenges that extend beyond academics, including
      Label each stage with the tool or library you're using.
      You can use ASCII art, a Mermaid diagram, or embed a sketch as an image.
      You'll use this diagram as context when prompting AI tools to implement each stage. -->
+
+     ![Pipeline Diagram](./assets/pipeline_diagram.png)
 
 ---
 
@@ -121,6 +151,34 @@ Relevance: FGLI students face challenges that extend beyond academics, including
 
 **Milestone 3 — Ingestion and chunking:**
 
+**AI Tool**: ChatGPT + Claude
+
+**Input**: I will provide Claude with my chunking strategy for long-form content (150–220 token chunks with 30–50 token overlap) and a sample panel transcript from my data sources. I will work with ChatGPT to narrow down which metadata would be most conducive to improved retrieval quality.
+
+**Expected output**: A Python function that loads the transcript, splits it into chunks according to my specifications, and attaches metadata such as source type and topic.
+
+**Verification**: I will inspect the generated chunks to ensure they remain within the token limit and preserve coherent sections of the student's story.
+
+
+
 **Milestone 4 — Embedding and retrieval:**
 
+**AI Tool**: Claude
+
+**Input**: I will provide my chosen embedding model (all-MiniLM-L6-v2), vector store (ChromaDB), and desired retrieval behavior.
+
+**Expected output**: Code that generates embeddings for each chunk, stores them in ChromaDB, and retrieves the top-k most relevant chunks for a user query.
+
+**erification**: I will test queries such as "How do I find community as an FGLI student?" and confirm that the retrieved chunks are relevant to the question.
+
+
+
 **Milestone 5 — Generation and interface:**
+
+**AI Tool**: ChatGPT + Claude
+
+**Input**: I will provide a sample user query, retrieved chunks, and my requirement to generate responses using a Groq-hosted LLM.
+
+**Expected output**: A prompt template and generation function that combine retrieved context with the user's question to produce a grounded response.
+
+**Verification**: I will compare the generated response against the retrieved sources to ensure the answer is supported by the provided context and does not introduce unsupported information.
