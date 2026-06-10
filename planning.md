@@ -46,19 +46,19 @@ Relevance: FGLI students face challenges that extend beyond academics, including
 **Chunk size:**
 
 ***Longform Panel Transcripts:***
-* Chunk Size: 500 tokens
-* Overlap: 150 tokens
+* Chunk Size: 180 tokens
+* Overlap: 50 tokens
 * Reasoning: Panels that dive into the FGLI experience at NU are made up of several paragraphs. In order to improve coverage on a chunk's relevance to a user's query, large chunk and overlap size is necessary.
 
 ***Official Northwestern Resource Websites:***
-* Chunk Size: 300 tokens
-* Overlap: 50 tokens
+* Chunk Size: 100 tokens
+* Overlap: None
 * Reasoning: Resource pages don't need much context coverage as they are usually made up factual and concise sections (i.e., deadlines, office names, application steps, etc.).
 
 ***Reddit Threads:***
-* Chunk Size: ~100 - 200 tokens
-* Overlap: None
-* Reasoning: Usually reddit threads are naturally short, the range is provided to account for longer threads in hopes that the additional context can help the agent present a full experience / anectdote that can better answer a user's query.
+* Chunk Size: ~100 tokens
+* Overlap: 50
+* Reasoning: Usually reddit threads are naturally short, the large overlap is provided to account for longer threads in hopes that the additional context can help the agent present a full experience / anectdote that can better answer a user's query.
 
 
 **Overlap:**
