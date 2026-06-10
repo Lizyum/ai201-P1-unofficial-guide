@@ -1,0 +1,62 @@
+{
+  "northwestern_sass.md": {
+    "num_chunks": 2,
+    "source_type": "official_resource",
+    "chunk_size_used": 100,
+    "overlap_used": 0
+  },
+  "reddit_isolating_firstgen_experience.md": {
+    "num_chunks": 80,
+    "source_type": "reddit_thread",
+    "chunk_size_used": 100,
+    "overlap_used": 80
+  },
+  "youtube_fgli_alumni_panel.md": {
+    "num_chunks": 96,
+    "source_type": "youtube_transcript",
+    "chunk_size_used": 180,
+    "overlap_used": 50
+  },
+  "searle_first_generation_resources.md": {
+    "num_chunks": 46,
+    "source_type": "official_resource",
+    "chunk_size_used": 100,
+    "overlap_used": 0
+  },
+  "admission_blog_fgli_advice.md": {
+    "num_chunks": 5,
+    "source_type": "admission_blog",
+    "chunk_size_used": 180,
+    "overlap_used": 50
+  },
+  "admission_blog_carter_finding_home.md": {
+    "num_chunks": 6,
+    "source_type": "student_story",
+    "chunk_size_used": 180,
+    "overlap_used": 50
+  },
+  "youtube_fgli_narratives.md": {
+    "num_chunks": 56,
+    "source_type": "youtube_transcript",
+    "chunk_size_used": 180,
+    "overlap_used": 50
+  },
+  "daily_northwestern_DD_EP7.md": {
+    "num_chunks": 14,
+    "source_type": "news_journal_transcript",
+    "chunk_size_used": 180,
+    "overlap_used": 50
+  },
+  "reddit_northwestern_experience.md": {
+    "num_chunks": 25,
+    "source_type": "reddit_thread",
+    "chunk_size_used": 100,
+    "overlap_used": 80
+  },
+  "northbynorthwestern_discountedu_ep6.md": {
+    "num_chunks": 19,
+    "source_type": "newsletter_article",
+    "chunk_size_used": 180,
+    "overlap_used": 50
+  }
+}
